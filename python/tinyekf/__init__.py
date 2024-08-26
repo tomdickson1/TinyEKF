@@ -40,6 +40,7 @@ class EKF(object):
         '''
 
         # Predict ----------------------------------------------------
+        self.x = fx
 
         # $P_k = F_{k-1} P_{k-1} F^T_{k-1} + Q_{k-1}$
         self.P_pre = np.dot(F, self.P_post).dot(F.T) + Q
